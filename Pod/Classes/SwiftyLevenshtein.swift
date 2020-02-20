@@ -135,7 +135,15 @@ public struct Array2D {
  */
 
 public func slowlevenshtein(sourceString: String, target targetString: String) -> Int {
-    
+
+    if targetString.isEmpty {
+      return sourceString.count
+    }
+
+    if sourceString.isEmpty {
+      return targetString.count
+    }
+
     let source = Array(sourceString.unicodeScalars)
     let target = Array(targetString.unicodeScalars)
     
@@ -175,6 +183,14 @@ public func slowlevenshtein(sourceString: String, target targetString: String) -
 
 public func levenshtein(sourceString: String, target targetString: String) -> Int {
     
+    if targetString.isEmpty {
+      return sourceString.count
+    }
+  
+    if sourceString.isEmpty {
+      return targetString.count
+    }
+  
     let source = Array(sourceString.unicodeScalars)
     let target = Array(targetString.unicodeScalars)
     
